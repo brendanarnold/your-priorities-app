@@ -1,0 +1,14 @@
+{
+  "name": "deployment",
+  "version": "1.0.0",
+  "description": "Scripts for managing Docker deployments",
+  "main": "index.js",
+  "scripts": {
+    "docker:build:reverse-proxy": "docker build  --platform=linux/amd64  -t your-priorities-reverse-proxy -f 2024/webserver_reverse_proxy/Dockerfile 2024/webserver_reverse_proxy",
+    "docker:build:app": "docker build  --platform=linux/amd64  -t your-priorities-app -f 2024/your-priorities-app/Dockerfile ..",
+    "docker:build:encoder": "docker build  --platform=linux/amd64  -t your-priorities-encoder -f 2024/your-priorities-encoder/Dockerfile .",
+    "docker:build:worker": "docker build  --platform=linux/amd64  -t your-priorities-worker -f 2024/your-priorities-worker/Dockerfile .."
+  },
+  "author": "",
+  "license": "ISC"
+}
