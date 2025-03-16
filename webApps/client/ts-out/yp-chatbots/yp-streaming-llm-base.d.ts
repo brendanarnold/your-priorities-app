@@ -26,7 +26,7 @@ export declare abstract class YpStreamingLlmBase extends YpBaseElement {
      * Uses the defaultDevWsPort from the provided instance (or first subscriber) for the URL.
      */
     private static initWebSocketsStatic;
-    private static scheduleReconnect;
+    static scheduleReconnect(doItNow?: boolean): void;
     sendClientMessage(payload: string): void;
     sendMessage(action: string, payload: any): void;
     disconnectedCallback(): void;
@@ -36,7 +36,7 @@ export declare abstract class YpStreamingLlmBase extends YpBaseElement {
     addThinkingChatBotMessage(): void;
     abstract addChatBotElement(wsMessage: YpAssistantMessage): Promise<void>;
     addChatUserElement(data: YpAssistantMessage): void;
-    get simplifiedChatLog(): PsSimpleChatLog[];
+    get simplifiedChatLog(): YpSimpleChatLog[];
     reset(): void;
 }
 //# sourceMappingURL=yp-streaming-llm-base.d.ts.map

@@ -10,15 +10,15 @@ export declare class YpAssistantServerApi extends YpServerApi {
     startNextWorkflowStep(groupId: number, agentId: string): Promise<void>;
     sendEmailInvitesForAnons(groupId: number, agentId: string, agentRunId: number, emails: string): Promise<void>;
     stopCurrentWorkflowStep(groupId: number, agentId: string): Promise<void>;
-    sendChatMessage(domainId: number, wsClientId: string, chatLog: PsSimpleChatLog[], languageName: string, currentMode?: string | undefined, serverMemoryId?: string): Promise<{
+    sendChatMessage(domainId: number, wsClientId: string, chatLog: YpSimpleChatLog[], languageName: string, currentMode?: string | undefined, serverMemoryId?: string): Promise<{
         serverMemoryId: string;
     }>;
+    startVoiceSession(domainId: number, wsClientId: string, currentMode: string, serverMemoryId?: string): Promise<void>;
     updateAssistantMemoryUserLoginStatus(domainId: number): Promise<any>;
     getMemoryFromServer(domainId: number): Promise<{
-        chatLog: PsSimpleChatLog[];
+        chatLog: YpSimpleChatLog[];
     }>;
     clearChatLogFromServer(domainId: number): Promise<void>;
-    startVoiceSession(domainId: number, wsClientId: string, currentMode: string, serverMemoryId?: string): Promise<void>;
     private saveChatToLocalStorage;
     loadChatsFromLocalStorage(): SavedChat[];
     clearServerMemory(serverMemoryId: string): Promise<void>;
@@ -27,6 +27,8 @@ export declare class YpAssistantServerApi extends YpServerApi {
         success: boolean;
         data: YpStructuredAnswer[];
     }>;
+    private waitForWsReconnection;
+    private waitForWsReconnectionWithRetry;
 }
 export {};
 //# sourceMappingURL=AssistantServerApi.d.ts.map
