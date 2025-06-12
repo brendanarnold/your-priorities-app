@@ -1,5 +1,5 @@
 startWatchWithEnv.sh
 startWorkerWithEnv.sh
-ts-out/server_api/config/config.json
+ts-out
+webAppsDist
 config/config.json
-ts-out/agents/models/testData
