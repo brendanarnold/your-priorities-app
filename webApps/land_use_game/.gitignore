@@ -24,6 +24,7 @@ models
 # build
 /_site/
 /out-tsc/
+dist
 
 storybook-static
 custom-elements.json
